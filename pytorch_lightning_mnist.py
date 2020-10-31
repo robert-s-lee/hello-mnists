@@ -30,9 +30,8 @@ class LitModel(pl.LightningModule):
         x, y = batch
         y_hat = self(x)
         loss = F.cross_entropy(y_hat, y)
-
-        # (log keyword is optional)
-        return {'loss': loss, 'log': {'train_loss': loss}}
+        self.log('train_loss', loss)
+        return loss
 
 if __name__ == '__main__':
     from argparse import ArgumentParser
