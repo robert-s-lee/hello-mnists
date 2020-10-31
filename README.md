@@ -16,7 +16,7 @@ pip install -r requirements.txt
 python pytorch.py
 
 # lightning
-python pytorch_ligtning_mnist.py
+python pl_mnist.py
 ```
 
 ## Tensorflow/keras
