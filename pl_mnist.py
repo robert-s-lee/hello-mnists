@@ -40,7 +40,7 @@ if __name__ == '__main__':
     parser.add_argument('--gpus', type=int, default=None)
     parser.add_argument('--lr', type=float, default=1e-3)
     parser.add_argument('--batch_size', type=int, default=32)
-    parser.add_argument('--max_epochs', default=100)
+    parser.add_argument('--max_epochs', type=int, default=100)
     args = parser.parse_args()
 
     dataset = MNIST(os.getcwd(), download=True, transform=transforms.ToTensor())
