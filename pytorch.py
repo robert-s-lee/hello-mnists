@@ -76,7 +76,7 @@ def test(model, device, test_loader, epoch):
     test_loss /= len(test_loader.dataset)
 
     acc = 100. * correct / len(test_loader.dataset)
-    writer.add_scalar("Loss/test", test_loss.detach(), epoch)
+    writer.add_scalar("Loss/test", test_loss, epoch)
     writer.add_scalar("acc/test", acc, epoch)
     print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'.format(
         test_loss, 
