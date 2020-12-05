@@ -6,6 +6,7 @@ from torchvision import transforms
 from torch.utils.data import DataLoader
 import pytorch_lightning as pl
 from torch.utils.data import random_split
+from pytorch_lightning.metrics.functional import accuracy
 
 class LitModel(pl.LightningModule):
 
@@ -31,6 +32,7 @@ class LitModel(pl.LightningModule):
         y_hat = self(x)
         loss = F.cross_entropy(y_hat, y)
         self.log('train_loss', loss)
+        self.log('val_acc', accuracy(y_hat, y))
         return loss
 
 if __name__ == '__main__':
@@ -40,7 +42,7 @@ if __name__ == '__main__':
     parser.add_argument('--gpus', type=int, default=None)
     parser.add_argument('--lr', type=float, default=1e-3)
     parser.add_argument('--batch_size', type=int, default=32)
-    parser.add_argument('--max_epochs', type=int, default=100)
+    parser.add_argument('--max_epochs', type=int, default=10)
     args = parser.parse_args()
 
     dataset = MNIST(os.getcwd(), download=True, transform=transforms.ToTensor())
