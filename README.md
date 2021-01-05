@@ -1,7 +1,6 @@
-# Hello MNIST in 4 Frameworks
+# Hello MNIST in 3 Frameworks
 
-Simple MNIST classifier written in PyTorch, PyTorch Lightning, TensorFlow 2,
-and Keras.
+Simple MNIST classifier written in PyTorch, PyTorch Lightning, and Keras.
 
 ## Install Dependencies
 
@@ -19,12 +18,8 @@ python pytorch.py
 python pl_mnist.py
 ```
 
-## Tensorflow/keras
+## Keras
 
 ```bash
-# keras
 python keras.py
-
-# tensorflow
-python tf2.py
 ```
