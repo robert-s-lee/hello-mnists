@@ -1,5 +1,4 @@
-torch
-pytorch-lightning
-torchvision
-tensorflow
-tensorflow_datasets
+torch==1.7.1
+pytorch-lightning==1.1.2
+torchvision==0.8.2
+tensorflow==2.4.0
