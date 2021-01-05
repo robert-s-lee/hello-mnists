@@ -3,7 +3,6 @@ from pathlib import Path
 
 from tensorflow import keras
 
-
 # Define this script's flags
 parser = ArgumentParser()
 parser.add_argument('--lr', type=float, default=1e-3)
@@ -23,11 +22,13 @@ data_dir.mkdir(parents=True, exist_ok=True)
 x_train, x_test = x_train.astype("float32") / 255, x_test.astype("float32") / 255
 
 # Build Model
-model = keras.models.Sequential([
-    keras.layers.Flatten(input_shape=(28, 28, 1)),
-    keras.layers.Dense(128,activation='relu'),
-    keras.layers.Dense(10, activation='softmax')
-])
+model = keras.models.Sequential(
+    [
+        keras.layers.Flatten(input_shape=(28, 28, 1)),
+        keras.layers.Dense(128, activation='relu'),
+        keras.layers.Dense(10, activation='softmax'),
+    ]
+)
 
 # Compile
 model.compile(
