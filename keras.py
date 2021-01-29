@@ -2,6 +2,7 @@ from argparse import ArgumentParser
 from pathlib import Path
 
 from tensorflow import keras
+import tensorflow
 
 # Define this script's flags
 parser = ArgumentParser()
