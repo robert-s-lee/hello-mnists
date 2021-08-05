@@ -82,9 +82,7 @@ ls data cifar-10-batches-py MNIST
 grid datastore create --name hello-mnist --source .
 ```
 
-- Run all 4 scripts from bash using the CLI commands below or click 
-[![PyTorch](https://img.shields.io/badge/rid_AI-run-78FF96.svg?labelColor=black&logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMTR2MjBhMTQgMTQgMCAwMDE0IDE0aDlWMzYuOEgxMi42VjExaDIyLjV2N2gxMS4yVjE0QTE0IDE0IDAgMDAzMi40IDBIMTVBMTQgMTQgMCAwMDEgMTR6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTM1LjIgNDhoMTEuMlYyNS41SDIzLjl2MTEuM2gxMS4zVjQ4eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==)](https://platform.grid.ai/#/runs?script=https://github.com/robert-s-lee/hello_mnists/blob/257a4b5edda6383160cd7110f18dbbadd23ab6a2/run.sh&cloud=grid&instance=t2.medium&accelerators=1&disk_size=200&framework=lightning&script_args=run.sh%20--data_dir%20grid:hello-mnist:1&datastore_name=hello-mnist&datastore_version=1&datastore_id=14a098d4-1384-4d2b-9e26-e0ea62fb3340&datastore_creator=sangkyulee@gmail.com&datastore_mount_dir=/datastores/hello-mnist)
-
+- Run all 4 scripts from bash using the CLI command
 
 ```
 grid run run.sh --data_dir grid:hello-mnist:1 
