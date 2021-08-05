@@ -13,7 +13,7 @@ from torchvision import datasets, transforms
 from torch.optim.lr_scheduler import StepLR
 import torch
 from torch.utils.tensorboard import SummaryWriter
-writer = SummaryWriter()
+writer = SummaryWriter(log_dir="lightning_logs/pytorch")
 
 
 class Net(nn.Module):

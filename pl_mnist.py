@@ -7,6 +7,7 @@ from torch.utils.data import DataLoader
 import pytorch_lightning as pl
 from torch.utils.data import random_split
 from pytorch_lightning.metrics.functional import accuracy
+from pytorch_lightning.loggers import TensorBoardLogger
 
 class LitModel(pl.LightningModule):
 
@@ -54,5 +55,6 @@ if __name__ == '__main__':
     model = LitModel(lr=args.lr)
 
     # most basic trainer, uses good defaults (auto-tensorboard, checkpoints, logs, and more)
-    trainer = pl.Trainer(gpus=args.gpus, max_epochs=args.max_epochs)
+    logger = TensorBoardLogger("lightning_logs", name="mnist")
+    trainer = pl.Trainer(gpus=args.gpus, max_epochs=args.max_epochs,logger=logger)
     trainer.fit(model, train_loader)
