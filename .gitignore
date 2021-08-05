@@ -1,0 +1,6 @@
+.DS_Store
+data/*
+cifar-10-batches-py/*
+lightning_logs/*
+MNIST/*
+
