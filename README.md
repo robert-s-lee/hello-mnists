@@ -16,7 +16,7 @@ grid login
 
 Use the CLI commands below or click 
 [![PyTorch](https://img.shields.io/badge/rid_AI-run-78FF96.svg?labelColor=black&logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMTR2MjBhMTQgMTQgMCAwMDE0IDE0aDlWMzYuOEgxMi42VjExaDIyLjV2N2gxMS4yVjE0QTE0IDE0IDAgMDAzMi40IDBIMTVBMTQgMTQgMCAwMDEgMTR6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTM1LjIgNDhoMTEuMlYyNS41SDIzLjl2MTEuM2gxMS4zVjQ4eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==)](
-https://platform.grid.ai/#/runs?script=https://github.com/robert-s-lee/hello_mnists/blob/6cbeebc74035cc802ddcacb852e8c284e243e4cf/pytorch.py&cloud=grid&instance=t2.medium&accelerators=1&disk_size=200&framework=lightning 
+https://platform.grid.ai/#/runs?script=https://github.com/robert-s-lee/hello-mnists/blob/60b2ca867645f727cd7ab83e3b810b05ae085aa5/pytorch.py&cloud=grid&instance=t2.medium&accelerators=1&disk_size=200&framework=lightning 
 )
 
 ```bash
@@ -31,7 +31,7 @@ grid run pytorch.py | tee /tmp/grid.run.log
 
 Use the CLI commands below or click 
 [![Lightning](https://img.shields.io/badge/rid_AI-run-78FF96.svg?labelColor=black&logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMTR2MjBhMTQgMTQgMCAwMDE0IDE0aDlWMzYuOEgxMi42VjExaDIyLjV2N2gxMS4yVjE0QTE0IDE0IDAgMDAzMi40IDBIMTVBMTQgMTQgMCAwMDEgMTR6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTM1LjIgNDhoMTEuMlYyNS41SDIzLjl2MTEuM2gxMS4zVjQ4eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==)](
-https://platform.grid.ai/#/runs?script=https://github.com/robert-s-lee/hello_mnists/blob/6cbeebc74035cc802ddcacb852e8c284e243e4cf/pl_mnist.py&cloud=grid&instance=t2.medium&accelerators=1&disk_size=200&framework=lightning
+https://platform.grid.ai/#/runs?script=https://github.com/robert-s-lee/hello-mnists/blob/60b2ca867645f727cd7ab83e3b810b05ae085aa5/pl_mnist.py&cloud=grid&instance=t2.medium&accelerators=1&disk_size=200&framework=lightning
 )
 
 ```bash
@@ -46,7 +46,7 @@ grid run pl_mnist.py | tee /tmp/grid.run.log
 
 Use the CLI commands below or click 
 [![Keras](https://img.shields.io/badge/rid_AI-run-78FF96.svg?labelColor=black&logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMTR2MjBhMTQgMTQgMCAwMDE0IDE0aDlWMzYuOEgxMi42VjExaDIyLjV2N2gxMS4yVjE0QTE0IDE0IDAgMDAzMi40IDBIMTVBMTQgMTQgMCAwMDEgMTR6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTM1LjIgNDhoMTEuMlYyNS41SDIzLjl2MTEuM2gxMS4zVjQ4eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==)](
-https://platform.grid.ai/#/runs?script=https://github.com/robert-s-lee/hello_mnists/blob/6cbeebc74035cc802ddcacb852e8c284e243e4cf/keras.py&cloud=grid&instance=t2.medium&accelerators=1&disk_size=200&framework=lightning&script_args=keras.py  
+https://platform.grid.ai/#/runs?script=https://github.com/robert-s-lee/hello-mnists/blob/60b2ca867645f727cd7ab83e3b810b05ae085aa5/keras.py&cloud=grid&instance=t2.medium&accelerators=1&disk_size=200&framework=lightning&script_args=keras.py  
 )
 
 ```bash
@@ -68,15 +68,26 @@ python pl_cifar10.py
 grid run pl_cifar10.py | tee /tmp/grid.run.log
 ```
 
-# Run all Bonus
+# Datastore Examples with Hyperparameter Optimization(HPO)
 
 ```bash
 # build the datastore for hyperparameter sweep
 grid datastore create --name hello-mnist --source .
-# run one time
+```
+
+- Run all 4 scripts from bash using the CLI commands below or click 
+[![PyTorch](https://img.shields.io/badge/rid_AI-run-78FF96.svg?labelColor=black&logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMTR2MjBhMTQgMTQgMCAwMDE0IDE0aDlWMzYuOEgxMi42VjExaDIyLjV2N2gxMS4yVjE0QTE0IDE0IDAgMDAzMi40IDBIMTVBMTQgMTQgMCAwMDEgMTR6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTM1LjIgNDhoMTEuMlYyNS41SDIzLjl2MTEuM2gxMS4zVjQ4eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==)](https://platform.grid.ai/#/runs?script=https://github.com/robert-s-lee/hello_mnists/blob/257a4b5edda6383160cd7110f18dbbadd23ab6a2/run.sh&cloud=grid&instance=t2.medium&accelerators=1&disk_size=200&framework=lightning&script_args=run.sh%20--data_dir%20grid:hello-mnist:1&datastore_name=hello-mnist&datastore_version=1&datastore_id=14a098d4-1384-4d2b-9e26-e0ea62fb3340&datastore_creator=sangkyulee@gmail.com&datastore_mount_dir=/datastores/hello-mnist)
+
+
+```
 grid run run.sh --data_dir grid:hello-mnist:1 
-# run in parallel varying the learning rate
-grid run run.sh --data_dir grid:hello-mnist:1 --max_epochs 1 --lr "uniform(0,.1,8)"
+```
+
+- Run in parallel varying the learning rate using the CLI commands below or click 
+[![PyTorch](https://img.shields.io/badge/rid_AI-run-78FF96.svg?labelColor=black&logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMTR2MjBhMTQgMTQgMCAwMDE0IDE0aDlWMzYuOEgxMi42VjExaDIyLjV2N2gxMS4yVjE0QTE0IDE0IDAgMDAzMi40IDBIMTVBMTQgMTQgMCAwMDEgMTR6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTM1LjIgNDhoMTEuMlYyNS41SDIzLjl2MTEuM2gxMS4zVjQ4eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==)](https://platform.grid.ai/#/runs?script=https://github.com/robert-s-lee/hello_mnists/blob/257a4b5edda6383160cd7110f18dbbadd23ab6a2/run.sh&cloud=grid&use_spot&instance=t2.medium&accelerators=1&disk_size=200&framework=lightning&script_args=run.sh%20--data_dir%20grid:hello-mnist:1%20--max_epochs%202%20--lr%20'uniform(0,.1,8)'&datastore_name=hello-mnist&datastore_version=1&datastore_id=14a098d4-1384-4d2b-9e26-e0ea62fb3340&datastore_creator=sangkyulee@gmail.com&datastore_mount_dir=/datastores/hello-mnist)
+
+```
+grid run --use_spot run.sh --data_dir grid:hello-mnist:1 --max_epochs 1 --lr "uniform(0,.1,8)"
 ```
 
 # Default Command Line Argument Values per Script
@@ -86,7 +97,7 @@ grid run run.sh --data_dir grid:hello-mnist:1 --max_epochs 1 --lr "uniform(0,.1,
 | --max_epochs | 5 | 10 | 10 | 14| 
 | --lr | 1.00E-03 | 1.00E-03 | 1.00E-03 | 1 | 
 | --batch_size | 32 | 32 | 32 | 64 | 
-| --data_dir | os.getcwd | os.getcwd | os.getcwd |  | 
+| --data_dir | os.getcwd | os.getcwd | os.getcwd | os.getcwd | 
 | --num_workers |   | 8 | 8 |  | 
 | --gpus |   | 0 | 0 |  | 
 | --test_batch_size |   |   |   | 1000| 
