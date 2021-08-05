@@ -7,6 +7,7 @@ from torch.utils.data import DataLoader
 import pytorch_lightning as pl
 from torch.utils.data import random_split
 from pytorch_lightning.metrics.functional import accuracy
+from pytorch_lightning.loggers import TensorBoardLogger
 
 class LitModel(pl.LightningModule):
 

@@ -82,7 +82,7 @@ grid run run.sh --data_dir grid:hello-mnist:1
 | --max_epochs | 5 | 10 | 10 | 14| 
 | --lr | 1.00E-03 | 1.00E-03 | 1.00E-03 | 1 | 
 | --batch_size | 32 | 32 | 32 | 64 | 
-| --data_dir | ./data/ | os.getcwd | os.getcwd |  | 
+| --data_dir | os.getcwd | os.getcwd | os.getcwd |  | 
 | --num_workers |   | 8 | 8 |  | 
 | --gpus |   | 0 | 0 |  | 
 | --test_batch_size |   |   |   | 1000| 
