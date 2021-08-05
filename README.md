@@ -10,6 +10,9 @@ conda activate mnist
 pip install -r requirements.txt
 pip install lightning-grid
 grid login
+
+git clone https://github.com/robert-s-lee/hello-mnists
+cd hello-mnists
 ```
 
 # PyTorch
