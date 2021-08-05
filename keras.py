@@ -13,7 +13,7 @@ parser.add_argument('--num_workers', type=int, default=8)
 args = parser.parse_args()
 
 # Make sure data_dir is absolute + create it if it doesn't exist
-data_dir = Path(args.data_dir).absolute()
+data_dir = Path(f'{args.data_dir}/data').absolute()
 data_dir.mkdir(parents=True, exist_ok=True)
 
 # Download and/or load data from disk

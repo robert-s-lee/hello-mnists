@@ -68,6 +68,13 @@ python pl_cifar10.py
 grid run pl_cifar10.py | tee /tmp/grid.run.log
 ```
 
+# Run all
+
+```bash
+grid datastore create --name hello-mnist .
+grid run run.sh --data_dir grid:hello-mnist:1
+```
+
 # Default Command Line Argument Values per Script
 
 | Argument Name  | keras.py | pl_cifar10.py | pl_mnist.py | pytorch.py| 
