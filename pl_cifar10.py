@@ -41,10 +41,10 @@ if __name__ == '__main__':
 
     parser = ArgumentParser()
     parser.add_argument('--gpus', type=int, default=0)
-    parser.add_argument('--lr', type=float, default=1e-3, env_var="CIFAR_LR")
-    parser.add_argument('--batch_size', type=int, default=32, env_var="CIFAR_BATCH_SIZE")
-    parser.add_argument('--max_epochs', type=int, default=10, env_var="CIFAR_MAX_EPOCHS")
-    parser.add_argument('--data_dir', type=str, default=os.getcwd())
+    parser.add_argument('--lr', type=float, default=1e-3, env_var="MNIST_LR")
+    parser.add_argument('--batch_size', type=int, default=32, env_var="MNIST_BATCH_SIZE")
+    parser.add_argument('--max_epochs', type=int, default=10, env_var="MNIST_MAX_EPOCHS")
+    parser.add_argument('--data_dir', type=str, default=os.getcwd(), env_var="MNIST_DATA_DIR")
     parser.add_argument('--num_workers', type=int, default=8)
  
     args = parser.parse_args()
@@ -56,5 +56,6 @@ if __name__ == '__main__':
     model = LitModel(lr=args.lr)
 
     # most basic trainer, uses good defaults (auto-tensorboard, checkpoints, logs, and more)
-    trainer = pl.Trainer(gpus=args.gpus, max_epochs=args.max_epochs)
+    logger = TensorBoardLogger("lightning_logs", name="pl_cifar10")
+    trainer = pl.Trainer(gpus=args.gpus, max_epochs=args.max_epochs, logger=logger)
     trainer.fit(model, train_loader)

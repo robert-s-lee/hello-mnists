@@ -55,6 +55,6 @@ if __name__ == '__main__':
     model = LitModel(lr=args.lr)
 
     # most basic trainer, uses good defaults (auto-tensorboard, checkpoints, logs, and more)
-    logger = TensorBoardLogger("lightning_logs", name="mnist")
+    logger = TensorBoardLogger("lightning_logs", name="pl_mnist")
     trainer = pl.Trainer(gpus=args.gpus, max_epochs=args.max_epochs,logger=logger)
     trainer.fit(model, train_loader)
