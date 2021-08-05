@@ -68,11 +68,15 @@ python pl_cifar10.py
 grid run pl_cifar10.py | tee /tmp/grid.run.log
 ```
 
-# Run all
+# Run all Bonus
 
 ```bash
-grid datastore create --name hello-mnist .
-grid run run.sh --data_dir grid:hello-mnist:1
+# build the datastore for hyperparameter sweep
+grid datastore create --name hello-mnist --source .
+# run one time
+grid run run.sh --data_dir grid:hello-mnist:1 
+# run in parallel varying the learning rate
+grid run run.sh --data_dir grid:hello-mnist:1 --max_epochs 1 --lr "uniform(0,.1,8)"
 ```
 
 # Default Command Line Argument Values per Script
