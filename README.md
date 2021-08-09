@@ -96,23 +96,23 @@ grid run --use_spot run.sh --data_dir grid:hello-mnist:1 --max_epochs 1 --lr "un
 
 # GPU examples
 
-## Single GPU
+## Node Cont: 1 GPU Per Server :1 (n1g1)
 ```
-grid run --use_spot --instance_type g4dn.xlarge --gpus 1  --name n1g1-mnists-$(date '+%m%d-%H%M%S') runtorch.sh --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
-```
-
-## Two nodes / Single GPU per node
-```bash
-grid run --use_spot --instance_type g4dn.xlarge --gpus 2 runtorch.sh --name n2g1-mnists-$(date '+%m%d-%H%M%S') --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
+grid run --use_spot --instance_type g4dn.2xlarge --gpus 1  --name n1g1-mnists-$(date '+%m%d-%H%M%S') runtorch.sh --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
 ```
 
-## Four nodes / Single GPU per node
+## Node Cont: 2 GPU Per Server :1 (n2g1)
 ```bash
-grid run --use_spot --instance_type g4dn.xlarge --gpus 4 runtorch.sh --name n4g1-mnists-$(date '+%m%d-%H%M%S') --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
+grid run --use_spot --instance_type g4dn.2xlarge --gpus 2 runtorch.sh --name n2g1-mnists-$(date '+%m%d-%H%M%S') --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
 ```
-## Eight nodes / Single GPU per node
+
+## Node Cont: 4 GPU Per Server :1 (n4g1)
 ```bash
-grid run --use_spot --instance_type g4dn.xlarge --gpus 8 runtorch.sh --name n8g1-mnists-$(date '+%m%d-%H%M%S') --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
+grid run --use_spot --instance_type g4dn.2xlarge --gpus 4 runtorch.sh --name n4g1-mnists-$(date '+%m%d-%H%M%S') --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
+```
+## Node Cont: 8 GPU Per Server :1 (n8g1)
+```bash
+grid run --use_spot --instance_type g4dn.2xlarge --gpus 8 runtorch.sh --name n8g1-mnists-$(date '+%m%d-%H%M%S') --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
 ```
 
 # Default Command Line Argument Values per Script
