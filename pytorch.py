@@ -99,8 +99,6 @@ def main():
                         help='learning rate (default: 1.0)', env_var="MNIST_LR")
     parser.add_argument('--gamma', type=float, default=0.7, metavar='M',
                         help='Learning rate step gamma (default: 0.7)')
-    parser.add_argument('--cuda', action='store_true', default=False,
-                        help='disables CUDA training')
     parser.add_argument('--dry_run', action='store_true', default=False,
                         help='quickly check a single pass')
     parser.add_argument('--seed', type=int, default=1, metavar='S',
@@ -110,12 +108,17 @@ def main():
     parser.add_argument('--save_model', action='store_true', default=False,
                         help='For Saving the current Model')
     parser.add_argument('--data_dir', type=str, default=os.getcwd(), env_var="MNIST_DATA_DIR")
+    parser.add_argument('--gpus', type=int, default=0)
+
     args = parser.parse_args()
-    use_cuda = not args.cuda and torch.cuda.is_available()
 
     torch.manual_seed(args.seed)
 
-    device = torch.device("cuda" if use_cuda else "cpu")
+    if args.gpus > 0:
+      use_cuda = torch.cuda.is_available()
+      device = torch.device("cuda" if use_cuda else "cpu")
+    else:
+      device = torch.device("cpu")
 
     kwargs = {'batch_size': args.batch_size}
     if use_cuda:

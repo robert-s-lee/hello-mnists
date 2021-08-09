@@ -11,6 +11,7 @@ parser.add_argument('--batch_size', type=int, default=32, env_var="MNIST_BATCH_S
 parser.add_argument('--max_epochs', type=int, default=5, env_var="MNIST_MAX_EPOCHS")
 parser.add_argument('--data_dir', type=str, default=os.getcwd(), env_var="MNIST_DATA_DIR")
 parser.add_argument('--num_workers', type=int, default=8)
+parser.add_argument('--gpus', type=int, default=0)
 args = parser.parse_args()
 
 # Make sure data_dir is absolute + create it if it doesn't exist

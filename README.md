@@ -94,6 +94,17 @@ grid run run.sh --data_dir grid:hello-mnist:1
 grid run --use_spot run.sh --data_dir grid:hello-mnist:1 --max_epochs 1 --lr "uniform(0,.1,8)"
 ```
 
+# GPU examples
+
+```
+grid run --use_spot --instance_type g4dn.4xlarge --gpus 1 keras.py --gpus 1 --data_dir grid:hello-mnist:1 
+
+grid run --use_spot --instance_type g4dn.4xlarge --gpus 1 pytorch.py --gpus 1 --data_dir grid:hello-mnist:1 
+
+grid run --use_spot --instance_type g4dn.4xlarge --gpus 1 plmnist.py --gpus 1 --data_dir grid:hello-mnist:1 
+
+```
+
 # Default Command Line Argument Values per Script
 
 | Argument Name  | keras.py | pl_cifar10.py | pl_mnist.py | pytorch.py| 
