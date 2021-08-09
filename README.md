@@ -98,32 +98,21 @@ grid run --use_spot run.sh --data_dir grid:hello-mnist:1 --max_epochs 1 --lr "un
 
 ## Single GPU
 ```
-grid run --use_spot --instance_type g4dn.4xlarge --gpus 1 run.sh --name gpu1-$(date '+%m%d-%H%M%S') --data_dir grid:hello-mnist:1 --max_epochs 8
-
-# or run one at time
-grid run --use_spot --instance_type g4dn.4xlarge --gpus 1 keras.py --gpus 1 --data_dir grid:hello-mnist:1 --max_epochs 8
-
-grid run --use_spot --instance_type g4dn.4xlarge --gpus 1 pytorch.py --gpus 1 --data_dir grid:hello-mnist:1 --max_epochs 8
-
-grid run --use_spot --instance_type g4dn.4xlarge --gpus 1 plmnist.py --gpus 1 --data_dir grid:hello-mnist:1 --max_epochs 8
+grid run --use_spot --instance_type g4dn.xlarge --gpus 1  --name n1g1-mnists-$(date '+%m%d-%H%M%S') runtorch.sh --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
 ```
 
 ## Two nodes / Single GPU per node
 ```bash
-grid run --use_spot --instance_type g4dn.4xlarge --gpus 2 run.sh --name gpu2-$(date '+%m%d-%H%M%S') --data_dir grid:hello-mnist:1 --max_epochs 8
+grid run --use_spot --instance_type g4dn.xlarge --gpus 2 runtorch.sh --name n2g1-mnists-$(date '+%m%d-%H%M%S') --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
 ```
 
 ## Four nodes / Single GPU per node
 ```bash
-grid run --use_spot --instance_type g4dn.4xlarge --gpus 4 run.sh --name gpu4-$(date '+%m%d-%H%M%S') --data_dir grid:hello-mnist:1 --max_epochs 8
+grid run --use_spot --instance_type g4dn.xlarge --gpus 4 runtorch.sh --name n4g1-mnists-$(date '+%m%d-%H%M%S') --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
 ```
 ## Eight nodes / Single GPU per node
 ```bash
-grid run --use_spot --instance_type g4dn.4xlarge --gpus 8 run.sh --name gpu8-$(date '+%m%d-%H%M%S') --data_dir grid:hello-mnist:1 --max_epochs 8
-```
-
-```bash
-grid run --use_spot --instance_type g4dn.4xlarge --gpus 2 run.sh --data_dir grid:hello-mnist:1 --max_epochs 4
+grid run --use_spot --instance_type g4dn.xlarge --gpus 8 runtorch.sh --name n8g1-mnists-$(date '+%m%d-%H%M%S') --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
 ```
 
 # Default Command Line Argument Values per Script
