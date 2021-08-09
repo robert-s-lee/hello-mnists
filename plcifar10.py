@@ -58,5 +58,5 @@ if __name__ == '__main__':
 
     # most basic trainer, uses good defaults (auto-tensorboard, checkpoints, logs, and more)
     logger = TensorBoardLogger("lightning_logs", name="pl_cifar10")
-    trainer = pl.Trainer(gpus=args.gpus, max_epochs=args.max_epochs,logger=logger,distributed_backend="ddp" if args.gpus > 1 else None))
+    trainer = pl.Trainer(gpus=args.gpus, max_epochs=args.max_epochs,logger=logger,distributed_backend="ddp" if args.gpus > 1 else None)
     trainer.fit(model, train_loader)
