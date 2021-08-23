@@ -103,7 +103,7 @@ grid run --use_spot --instance_type g4dn.2xlarge --gpus 1 --name n1g1-mnists-$(d
 
 ## Node Cont: 2 GPU Per Server :1 (n2g1)
 ```bash
-grid run --use_spot --instance_type g4dn.2xlarge --gpus 2 --name n2g1-mnists-$(date '+%m%d-%H%M%S') runtorch.sh --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
+grid run --instance_type g4dn.2xlarge --gpus 2 --name n2g1-mnists-$(date '+%m%d-%H%M%S') runtorch.sh --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
 ```
 
 ## Node Cont: 4 GPU Per Server :1 (n4g1)
