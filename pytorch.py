@@ -114,6 +114,8 @@ def main():
 
     torch.manual_seed(args.seed)
 
+    use_cuda = False
+    
     if args.gpus > 0:
       use_cuda = torch.cuda.is_available()
       device = torch.device("cuda" if use_cuda else "cpu")
