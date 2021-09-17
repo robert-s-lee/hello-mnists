@@ -8,6 +8,8 @@ The download failure is logged in Grid.ai `Stdout Logs` as `urllib.error.HTTPErr
 
 # Install Dependencies
 
+[Grid Session SSH](https://docs.grid.ai/products/sessions/how-to-ssh-into-a-session) can be used to run the below CLI commands.
+
 ```bash
 conda create --yes --name mnist python=3.8
 conda activate mnist
@@ -21,10 +23,7 @@ cd hello-mnists
 
 # PyTorch
 
-Use the CLI commands below or click 
-[![PyTorch](https://img.shields.io/badge/rid_AI-run-78FF96.svg?labelColor=black&logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMTR2MjBhMTQgMTQgMCAwMDE0IDE0aDlWMzYuOEgxMi42VjExaDIyLjV2N2gxMS4yVjE0QTE0IDE0IDAgMDAzMi40IDBIMTVBMTQgMTQgMCAwMDEgMTR6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTM1LjIgNDhoMTEuMlYyNS41SDIzLjl2MTEuM2gxMS4zVjQ4eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==)](
-https://platform.grid.ai/#/runs?script=https://github.com/robert-s-lee/hello-mnists/blob/60b2ca867645f727cd7ab83e3b810b05ae085aa5/pytorch.py&cloud=grid&instance=t2.medium&accelerators=1&disk_size=200&framework=lightning 
-)
+Use the CLI commands below. 
 
 ```bash
 # Local Run
@@ -36,10 +35,7 @@ grid run pytorch.py | tee /tmp/grid.run.log
 
 # PyTorch Lightning
 
-Use the CLI commands below or click 
-[![Lightning](https://img.shields.io/badge/rid_AI-run-78FF96.svg?labelColor=black&logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMTR2MjBhMTQgMTQgMCAwMDE0IDE0aDlWMzYuOEgxMi42VjExaDIyLjV2N2gxMS4yVjE0QTE0IDE0IDAgMDAzMi40IDBIMTVBMTQgMTQgMCAwMDEgMTR6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTM1LjIgNDhoMTEuMlYyNS41SDIzLjl2MTEuM2gxMS4zVjQ4eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==)](
-https://platform.grid.ai/#/runs?script=https://github.com/robert-s-lee/hello-mnists/blob/60b2ca867645f727cd7ab83e3b810b05ae085aa5/plmnist.py&cloud=grid&instance=t2.medium&accelerators=1&disk_size=200&framework=lightning
-)
+Use the CLI commands below.
 
 ```bash
 # Local Run
@@ -51,10 +47,7 @@ grid run plmnist.py | tee /tmp/grid.run.log
 
 # Keras
 
-Use the CLI commands below or click 
-[![Keras](https://img.shields.io/badge/rid_AI-run-78FF96.svg?labelColor=black&logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMTR2MjBhMTQgMTQgMCAwMDE0IDE0aDlWMzYuOEgxMi42VjExaDIyLjV2N2gxMS4yVjE0QTE0IDE0IDAgMDAzMi40IDBIMTVBMTQgMTQgMCAwMDEgMTR6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTM1LjIgNDhoMTEuMlYyNS41SDIzLjl2MTEuM2gxMS4zVjQ4eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==)](
-https://platform.grid.ai/#/runs?script=https://github.com/robert-s-lee/hello-mnists/blob/60b2ca867645f727cd7ab83e3b810b05ae085aa5/keras.py&cloud=grid&instance=t2.medium&accelerators=1&disk_size=200&framework=lightning&script_args=keras.py  
-)
+Use the CLI commands below.
 
 ```bash
 # Local Run
@@ -66,10 +59,8 @@ grid run keras.py | tee /tmp/grid.run.log
 
 # CIFAR-10 Bonus
 
-Use the CLI commands below or click 
-[![Keras](https://img.shields.io/badge/rid_AI-run-78FF96.svg?labelColor=black&logo=data:image/svg%2bxml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMTR2MjBhMTQgMTQgMCAwMDE0IDE0aDlWMzYuOEgxMi42VjExaDIyLjV2N2gxMS4yVjE0QTE0IDE0IDAgMDAzMi40IDBIMTVBMTQgMTQgMCAwMDEgMTR6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTM1LjIgNDhoMTEuMlYyNS41SDIzLjl2MTEuM2gxMS4zVjQ4eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==)](
-https://platform.grid.ai/#/runs?script=https://github.com/robert-s-lee/hello-mnists/blob/60b2ca867645f727cd7ab83e3b810b05ae085aa5/plcifar10.py&cloud=grid&instance=t2.medium&accelerators=1&disk_size=200&framework=lightning&script_args=plcifar10.py  
-)
+Use the CLI commands below.
+
 ```bash
 # Local Run
 python plcifar10.py
@@ -100,24 +91,12 @@ grid run --use_spot run.sh --data_dir grid:hello-mnist:1 --max_epochs 1 --lr "un
 
 # GPU examples
 
-## Node Cont: 1 GPU Per Server :1 (n1g1)
+## Node Count: 1 GPU Per Server (n1g1)
 ```
 grid run --use_spot --instance_type g4dn.2xlarge --gpus 1 --name n1g1-mnists-$(date '+%m%d-%H%M%S') runtorch.sh --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
 ```
 
-## Node Cont: 2 GPU Per Server :1 (n2g1)
-```bash
-grid run --instance_type g4dn.2xlarge --gpus 2 --name n2g1-mnists-$(date '+%m%d-%H%M%S') runtorch.sh --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
-```
-
-## Node Cont: 4 GPU Per Server :1 (n4g1)
-```bash
-grid run --use_spot --instance_type g4dn.2xlarge --gpus 4 --name n4g1-mnists-$(date '+%m%d-%H%M%S') runtorch.sh  --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
-```
-## Node Cont: 8 GPU Per Server :1 (n8g1)
-```bash
-grid run --use_spot --instance_type g4dn.2xlarge --gpus 8 --name n8g1-mnists-$(date '+%m%d-%H%M%S') runtorch.sh --data_dir grid:hello-mnist:1 --max_epochs 8 --gpus 1
-```
+TODO: Multi node for PyTorch and Lightning.
 
 # Default Command Line Argument Values per Script
 
