@@ -1,7 +1,7 @@
 Grid.ai running MNIST classifier written in PyTorch, PyTorch Lightning, and Keras.
 
-NOTE: Please create Grid.ai Datastore when running Hyperparamter Optimization (HPO).
-Without the Datastore, HPO performs high frequency download of [MNIST datasets](http://yann.lecun.com/exdb/mnist/).
+NOTE: Please create Grid.ai Datastore when running Hyperparameter Optimization (HPO).
+Without the Datastore, HPO performs the high-frequency download of [MNIST datasets](http://yann.lecun.com/exdb/mnist/).
 The download may fail from time to time resulting in failed experiments.
 The download failure is logged in Grid.ai `Stdout Logs` as `urllib.error.HTTPError: HTTP Error 503: Service Unavailable`
 
