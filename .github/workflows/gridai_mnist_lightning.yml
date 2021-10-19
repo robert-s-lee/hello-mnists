@@ -4,10 +4,10 @@ name: "gridai mnists lightning"
 on:
   # push:
   pull_request:  
-  #schedule:
+  schedule:
   # run at 3 min past the hour every day
   # MIN HOUR DOM MON DOW CMD
-  #  - cron: 43 5,12,20 * * *
+    - cron: 22 2 * * *
 
 jobs:
   lightning:
@@ -15,6 +15,7 @@ jobs:
     with:
       script_name: plmnist.py
       grid_args: --localdir --instance_type t2.medium --dependency_file requirements.txt --framework lightning
+      script_args: --max_epochs 3	
     secrets:
       username: ${{ secrets.GRIDAI_USERNAME }} 
       key: ${{ secrets.GRIDAI_KEY }}
