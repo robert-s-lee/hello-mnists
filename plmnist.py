@@ -58,3 +58,4 @@ if __name__ == '__main__':
     logger = TensorBoardLogger("lightning_logs", name="pl_mnist")
     trainer = pl.Trainer(gpus=args.gpus, max_epochs=args.max_epochs,logger=logger,distributed_backend="ddp" if args.gpus > 1 else None)
     trainer.fit(model, train_loader)
+    quit()

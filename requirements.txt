@@ -7,4 +7,4 @@ tensorflow
 pytorch-lightning<1.2
 torch
 torchvision
-configargparse
+ConfigArgParse

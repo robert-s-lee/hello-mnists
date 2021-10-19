@@ -4,3 +4,4 @@ cifar-10-batches-py/*
 lightning_logs/*
 MNIST/*
 grid:hello-mnist:1/*
+__pycache__/keras.cpython-38.pyc
