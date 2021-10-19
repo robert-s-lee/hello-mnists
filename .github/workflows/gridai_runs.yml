@@ -10,11 +10,31 @@ on:
   #  - cron: 43 5,12,20 * * *
 
 jobs:
-  mnists:
+  plmnists:
     uses: robert-s-lee/actions/.github/workflows/gridai_run.yml@main
     with:
       script_name: plmnist.py
     secrets:
       username: ${{ secrets.GRIDAI_USERNAME }} 
       key: ${{ secrets.GRIDAI_KEY }}
-
+  pytorch:
+    uses: robert-s-lee/actions/.github/workflows/gridai_run.yml@main
+    with:
+      script_name: pytorch.py
+    secrets:
+      username: ${{ secrets.GRIDAI_USERNAME }} 
+      key: ${{ secrets.GRIDAI_KEY }}
+  keras:
+    uses: robert-s-lee/actions/.github/workflows/gridai_run.yml@main
+    with:
+      script_name: keras.py
+    secrets:
+      username: ${{ secrets.GRIDAI_USERNAME }} 
+      key: ${{ secrets.GRIDAI_KEY }}
+  cifar10:
+    uses: robert-s-lee/actions/.github/workflows/gridai_run.yml@main
+    with:
+      script_name: plcifar10.py
+    secrets:
+      username: ${{ secrets.GRIDAI_USERNAME }} 
+      key: ${{ secrets.GRIDAI_KEY }}      
