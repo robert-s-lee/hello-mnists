@@ -1,5 +1,5 @@
 # https://docs.github.com/en/actions/learn-github-actions/reusing-workflows
-name: "gridai mnists"
+name: "gridai mnists pytorch"
 
 on:
   # push:
