@@ -13,7 +13,7 @@ jobs:
   mnists:
     uses: robert-s-lee/actions/.github/workflows/gridai_run.yml@main
     with:
-      script_name: plmnit.py
+      script_name: plmnist.py
     secrets:
       username: ${{ secrets.GRIDAI_USERNAME }} 
       key: ${{ secrets.GRIDAI_KEY }}
