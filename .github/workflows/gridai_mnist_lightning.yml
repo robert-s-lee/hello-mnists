@@ -14,7 +14,7 @@ jobs:
     uses: robert-s-lee/actions/.github/workflows/gridai_run.yml@main
     with:
       script_name: plmnist.py
-      grid_arg: --localdir --instance_type t2.medium --dependency_file requirements.txt --framework lightning
+      grid_args: --localdir --instance_type t2.medium --dependency_file requirements.txt --framework lightning
     secrets:
       username: ${{ secrets.GRIDAI_USERNAME }} 
       key: ${{ secrets.GRIDAI_KEY }}
