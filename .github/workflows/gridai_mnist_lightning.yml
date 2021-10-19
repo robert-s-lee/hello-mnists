@@ -1,5 +1,5 @@
 # https://docs.github.com/en/actions/learn-github-actions/reusing-workflows
-name: "gridai mnists"
+name: "gridai mnists lightning"
 
 on:
   # push:
@@ -10,11 +10,11 @@ on:
   #  - cron: 43 5,12,20 * * *
 
 jobs:
-  mnists:
+  lightning:
     uses: robert-s-lee/actions/.github/workflows/gridai_run.yml@main
     with:
-      script_name: plmnit.py
+      script_name: plmnist.py
+      grid_args: --localdir --instance_type t2.medium --dependency_file requirements.txt --framework lightning
     secrets:
       username: ${{ secrets.GRIDAI_USERNAME }} 
       key: ${{ secrets.GRIDAI_KEY }}
-
