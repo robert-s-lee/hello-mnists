@@ -1,0 +1,20 @@
+# https://docs.github.com/en/actions/learn-github-actions/reusing-workflows
+name: "gridai mnists"
+
+on:
+  # push:
+  pull_request:  
+  #schedule:
+  # run at 3 min past the hour every day
+  # MIN HOUR DOM MON DOW CMD
+  #  - cron: 43 5,12,20 * * *
+
+jobs:
+  pytorch:
+    uses: robert-s-lee/actions/.github/workflows/gridai_run.yml@main
+    with:
+      script_name: pytorch.py
+      grid_arg: --localdir --instance_type t2.medium --dependency_file requirements.txt --framework torch
+    secrets:
+      username: ${{ secrets.GRIDAI_USERNAME }} 
+      key: ${{ secrets.GRIDAI_KEY }}    
