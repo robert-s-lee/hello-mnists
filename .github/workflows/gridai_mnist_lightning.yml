@@ -4,10 +4,10 @@ name: "gridai mnists lightning"
 on:
   # push:
   pull_request:  
-  #schedule:
+  schedule:
   # run at 3 min past the hour every day
   # MIN HOUR DOM MON DOW CMD
-  #  - cron: 43 5,12,20 * * *
+    - cron: 22 2 * * *
 
 jobs:
   lightning:
