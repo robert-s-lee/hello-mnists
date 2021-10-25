@@ -11,7 +11,7 @@ on:
 
 jobs:
   keras:
-    uses: robert-s-lee/actions/gridai_run.yml@main
+    uses: robert-s-lee/actions/gridai_run_artifact.yml@main
     with:
       script_name: keras.py
       grid_args: --localdir --instance_type t2.medium --dependency_file requirements.txt --framework tensorflow
