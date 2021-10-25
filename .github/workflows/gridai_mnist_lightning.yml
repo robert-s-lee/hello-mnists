@@ -11,11 +11,11 @@ on:
 
 jobs:
   lightning:
-    uses: robert-s-lee/actions/.github/workflows/gridai_run.yml@main
+    uses: robert-s-lee/actions/.github/workflows/gridai_run_artifact.yml@main
     with:
       script_name: plmnist.py
       grid_args: --localdir --instance_type t2.medium --dependency_file requirements.txt --framework lightning
       script_args: --max_epochs 3	
     secrets:
-      username: ${{ secrets.GRIDAI_USERNAME }}
-      key: ${{ secrets.GRIDAI_KEY }}
+      gridai_username: ${{ secrets.GRIDAI_USERNAME }}
+      gridai_key: ${{ secrets.GRIDAI_KEY }}
