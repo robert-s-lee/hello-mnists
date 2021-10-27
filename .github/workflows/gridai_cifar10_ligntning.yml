@@ -13,9 +13,9 @@ jobs:
   lightning:
     uses: robert-s-lee/actions/.github/workflows/gridai_run_artifact.yml@main
     with:
-      script_name: plcifar10.py
-      grid_args: --localdir --instance_type t2.medium --dependency_file requirements.txt --framework lightning
-      script_args: --max_epochs 3	
+      script-name: plcifar10.py
+      grid-args: --localdir --instance_type t2.medium --dependency_file requirements.txt --framework lightning
+      script-args: --max_epochs 3	
     secrets:
       gridai-username: ${{ secrets.GRIDAI_USERNAME }}
       gridai-key: ${{ secrets.GRIDAI_KEY }}
