@@ -17,5 +17,5 @@ jobs:
       grid_args: --localdir --instance_type t2.medium --dependency_file requirements.txt --framework lightning
       script_args: --max_epochs 3	
     secrets:
-      gridai_username: ${{ secrets.GRIDAI_USERNAME }}
-      gridai_key: ${{ secrets.GRIDAI_KEY }}
+      gridai-username: ${{ secrets.GRIDAI_USERNAME }}
+      gridai-key: ${{ secrets.GRIDAI_KEY }}
