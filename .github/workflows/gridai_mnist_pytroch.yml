@@ -14,7 +14,7 @@ jobs:
     uses: robert-s-lee/actions/.github/workflows/gridai_run_artifact.yml@main
     with:
       script-name: pytorch.py
-      grid-args: --localdir --instance_type t2.medium --dependency_file requirements.txt --framework torch
+      grid-args: --framework torch
       script-args: --max_epochs 3
     secrets:
       gridai-username: ${{ secrets.GRIDAI_USERNAME }}
