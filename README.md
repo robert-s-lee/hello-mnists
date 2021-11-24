@@ -1,3 +1,9 @@
+
+[![gridai mnists keras](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_mnist_keras.yml/badge.svg)](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_mnist_keras.yml)
+[![gridai mnists lightning](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_mnist_lightning.yml/badge.svg)](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_mnist_lightning.yml) 
+[![gridai mnists](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_mnist_pytroch.yml/badge.svg)](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_mnist_pytroch.yml)
+[![gridai cifar10 lightning](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_cifar10_ligntning.yml/badge.svg)](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_cifar10_ligntning.yml)
+
 Grid.ai running MNIST classifier written in PyTorch, PyTorch Lightning, and Keras.
 
 NOTE: Please create Grid.ai Datastore when running Hyperparameter Optimization (HPO).
@@ -5,11 +11,6 @@ Without the Datastore, HPO performs the high-frequency download of [MNIST datase
 The download may fail from time to time resulting in failed experiments.
 The download failure is logged in Grid.ai `Stdout Logs` as `urllib.error.HTTPError: HTTP Error 503: Service Unavailable`
 
-
-[![gridai mnists keras](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_mnist_keras.yml/badge.svg)](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_mnist_keras.yml)
-[![gridai mnists lightning](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_mnist_lightning.yml/badge.svg)](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_mnist_lightning.yml) 
-[![gridai mnists](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_mnist_pytroch.yml/badge.svg)](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_mnist_pytroch.yml)
-[![gridai cifar10 lightning](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_cifar10_ligntning.yml/badge.svg)](https://github.com/robert-s-lee/hello-mnists/actions/workflows/gridai_cifar10_ligntning.yml)
 
 # Install Dependencies
 
