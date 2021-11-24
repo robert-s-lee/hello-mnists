@@ -2,8 +2,14 @@
 name: "gridai mnists lightning"
 
 on:
-  # push:
-  pull_request:  
+  push:
+    paths:
+      - plmnist.py
+      - .github/workflows/gridai_mnist_lightning.yml   
+  pull_request:
+    paths:
+      - plmnist.py
+      - .github/workflows/gridai_mnist_lightning.yml     
   schedule:
   # run at 3 min past the hour every day
   # MIN HOUR DOM MON DOW CMD
@@ -11,11 +17,29 @@ on:
 
 jobs:
   lightning:
-    uses: robert-s-lee/actions/.github/workflows/gridai_run_artifact.yml@main
-    with:
-      script-name: plmnist.py
-      grid-args: --framework lightning
-      script-args: --max_epochs 3	
-    secrets:
-      gridai-username: ${{ secrets.GRIDAI_USERNAME }}
-      gridai-key: ${{ secrets.GRIDAI_KEY }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: gridai-actions/gridai-login@main
+        with:
+          gridai-username: ${{ secrets.GRIDAI_USERNAME }} 
+          gridai-key: ${{ secrets.GRIDAI_KEY }}
+
+      - id: gridai-obj-create
+        run: |
+          cd ${GITHUB_WORKSPACE}
+          gridai.py cli "grid run --localdir --instance_type t2.medium --framework lightning --dependency_file requirements.txt plmnist.py --max_epochs 3" status_to_kv --gha True
+        shell: bash  
+
+      - id: gridai-obj-status
+        run: |
+          gridai.py run ${{ steps.gridai-obj-create.outputs.grid_name }} --gha True
+        shell: bash  
+
+      - run: |
+          if [ -z "$(echo ${{ steps.gridai-obj-status.outputs.obj-summary }} | grep 'succeeded')" ]; then
+            exit 1
+          fi             
+        shell: bash        
